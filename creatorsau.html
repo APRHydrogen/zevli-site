@@ -72,6 +72,60 @@ section{padding:80px 0} h2{font-size:43px;letter-spacing:-.04em;line-height:1.05
 
 
 .platformLogo{width:18px;height:18px;display:inline-block;vertical-align:-4px;margin-right:6px;object-fit:contain}.platformName{display:inline-flex;align-items:center;white-space:nowrap}.platformRow{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:12px}.platformRow .platformName{font-size:13px;font-weight:800;color:#40504a;background:#fff;border:1px solid #e5e8e5;border-radius:999px;padding:7px 10px}.freeApp{display:inline-flex;align-items:center;gap:7px;font-weight:800;color:#08733b}.freeApp:before{content:'✓';width:22px;height:22px;border-radius:50%;display:inline-grid;place-items:center;background:#e7f7ed;color:#0b8c48;font-size:12px}.plat .social{display:inline-flex;align-items:center;gap:5px}.plat .social img{width:14px;height:14px;filter:brightness(0) invert(1)}
+
+/* --- 2026-10 layout polish --- */
+:root{--content:1120px}
+.wrap{max-width:var(--content);padding-left:24px;padding-right:24px}
+section{padding:72px 0}
+.heroGrid{min-height:620px;grid-template-columns:1.04fr .96fr;gap:64px;padding-top:64px;padding-bottom:70px}
+.heroGrid>div:first-child{max-width:610px}
+h1{font-size:62px;max-width:620px}
+.lead{font-size:19px;max-width:590px}
+.heroChecks{gap:14px 22px;max-width:600px}
+.heroArt{min-height:500px}
+.quick{max-width:1120px;margin-left:auto;margin-right:auto;gap:14px}
+.q{padding:24px 22px;min-height:170px;display:flex;flex-direction:column;align-items:flex-start}
+.q h3{margin-top:13px;margin-bottom:7px}.q p{margin:0;line-height:1.5}
+.processHead{max-width:720px;margin-bottom:30px}
+.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:30px;max-width:980px}
+.step{min-height:0;padding:24px 24px 24px 78px;display:block}
+.step .num{position:absolute;left:24px;top:24px;margin:0;width:36px;height:36px}
+.step h3{margin:2px 0 7px;font-size:18px}.step p{font-size:14px;line-height:1.55}
+.step:not(:last-child):after{display:none}
+.step:last-child{grid-column:1/-1;max-width:482px}
+.earn .wrap{max-width:1120px}
+.earnGrid{grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;margin-top:30px}
+.earnGrid>.card{height:100%}
+.earnGrid>div>.card{height:100%;padding:28px}
+.earnGrid h3{line-height:1.05}
+.earn table{margin-top:22px}
+th,td{padding:14px 16px}
+.platforms{gap:14px;margin-top:28px}.plat{height:310px;border-radius:20px}.winner{transform:none;box-shadow:0 0 0 3px #23a455,0 16px 34px rgba(23,110,58,.14)}
+.creatorStory{max-width:960px;margin-left:auto;margin-right:auto;grid-template-columns:.92fr 1.08fr;overflow:hidden}
+.creatorStoryCopy{padding:38px 40px}
+.creatorStoryCopy h2{font-size:36px}
+.opportunity{max-width:960px;margin:0 auto;padding:30px 34px}
+.cols{grid-template-columns:1fr 1fr;gap:16px;max-width:960px;margin-left:auto;margin-right:auto;margin-top:18px}
+.cols>div{padding:26px}.cols>div:last-child{grid-column:1/-1}
+.cols>div:last-child details{display:inline-block;width:calc(50% - 8px);vertical-align:top;margin-right:12px}
+.cols>div:last-child details:nth-of-type(even){margin-right:0}
+.applybox{max-width:900px}.apply h2{max-width:720px;margin-left:auto;margin-right:auto}.applybox>p{max-width:650px;margin-left:auto;margin-right:auto}
+.applyForm{max-width:760px}
+footer .wrap{max-width:1120px}
+@media(max-width:900px){
+ .heroGrid{grid-template-columns:1fr;gap:30px}.heroGrid>div:first-child{max-width:none}.heroArt{min-height:430px}
+ .steps{grid-template-columns:1fr}.step:last-child{grid-column:auto;max-width:none}
+ .earnGrid{grid-template-columns:1fr}.creatorStory{grid-template-columns:1fr}.creatorStory img{max-height:380px;object-fit:cover;width:100%}
+ .cols{grid-template-columns:1fr}.cols>div:last-child{grid-column:auto}.cols>div:last-child details{display:block;width:100%;margin-right:0}
+ .opportunity{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ .wrap{padding-left:18px;padding-right:18px}section{padding:54px 0}.heroGrid{padding-top:38px;padding-bottom:52px}h1{font-size:44px}
+ .quick{grid-template-columns:1fr 1fr}.q{padding:18px 16px;min-height:150px}
+ .step{padding:20px 18px 20px 68px}.step .num{left:18px;top:20px}
+ .earnGrid>div>.card{padding:22px 18px}.platforms{grid-template-columns:1fr 1fr}.plat{height:255px}
+ .creatorStoryCopy{padding:26px 22px}.opportunity{padding:26px 22px}.cols>div{padding:21px}
+}
 </style>
 </head>
 <body>
