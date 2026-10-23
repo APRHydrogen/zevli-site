@@ -89,14 +89,16 @@ footer{padding:48px 0 60px;border-top:1px solid var(--hairline);margin-top:20px}
 
   <main class="doc">
 <h1>Privacy</h1>
-<p class="updated">Last updated 10 October 2026</p>
+<p class="updated">Last updated 23 October 2026</p>
 <p>Zevli is published by MSR Technology Pty Ltd (ACN 697 828 023), Melbourne, Australia. This page says what the Zevli app and this website do with information, in plain words. If anything here is unclear, write to <a href="mailto:info@zevli.co">info@zevli.co</a>.</p>
 <h2>The short version</h2>
 <ul>
 <li>Zevli has no accounts. It never asks for your name, your email address or your phone number.</li>
 <li>Your pet's profile is kept on your phone. Its name, photo, breed, birthday, allergies, sensitivities and priorities are never sent to us.</li>
-<li>Zevli has no advertising and runs no analytics of its own. We do not sell information or share it for marketing. On Android, the barcode scanner is a Google component that reports to Google. That is explained below.</li>
-<li>A few things do leave your phone so the app can work. They are listed below, with how long each is kept.</li>
+<li>Zevli has no advertising. We do not sell information or share it for marketing.</li>
+<li>The app makes a random id for your copy of the app. It goes with what the app sends, so we can keep the service running fairly and count how Zevli is used. It is not made from anything about you.</li>
+<li>We use a few services to run Zevli: AppsFlyer to count installs, RevenueCat to manage Zevli Plus, and Sentry to report crashes. Each is described below.</li>
+<li>A few things leave your phone so the app can work. They are listed below, with how long each is kept.</li>
 </ul>
 <h2>What stays on your phone</h2>
 <p>These are stored on your phone and are not sent to Zevli:</p>
@@ -110,29 +112,51 @@ footer{padding:48px 0 60px;border-top:1px solid var(--hairline);margin-top:20px}
 <p>The list of saved foods is never sent. Opening a saved food looks it up again, like any other food.</p>
 <p>Deleting the app deletes all of this. If your phone backs itself up, your pets and saved foods may be included in that backup, under your own Apple or Google account, so they can come back on a new phone.</p>
 <h2>What the app sends to Zevli</h2>
+<p>Every request from the app carries the random id described below. Beyond that:</p>
 <p><strong>When you look up a food.</strong> The barcode or the food's id, and whether your active pet is a dog or a cat.</p>
 <p><strong>When you search.</strong> The words you type, as you type them, and whether your active pet is a dog or a cat. Search is part of Zevli Plus.</p>
 <p><strong>When you ask for a daily amount or a plan for changing foods.</strong> The food, and your pet's species, life stage, weight, body condition and activity level. We work out the answer and do not keep those details.</p>
 <p><strong>When you have recorded what your pet eats now.</strong> The two foods, so the app can tell you whether they are the same food.</p>
-<p><strong>When a barcode isn't in Zevli.</strong> The app first asks us whether we already know that barcode is missing. A few seconds after telling you the food isn't there, it sends the barcode to us by itself, so the food can be added. It sends it again if you tap Request this product. The same happens if a food you open, such as one you saved, is no longer in Zevli. The time, and a random id for your copy of the app, go with it.</p>
+<p><strong>When a barcode isn't in Zevli.</strong> The app first asks us whether we already know that barcode is missing. A few seconds after telling you the food isn't there, it sends the barcode to us by itself, so the food can be added. It sends it again if you ask us to add it. The same happens if a food you open, such as one you saved, is no longer in Zevli. The time goes with it.</p>
 <p><strong>When you ask for a food by name.</strong> The words you typed.</p>
-<p><strong>When you send a photo of a pack.</strong> The photo, which food it is of, what kind of photo it is, the time it was taken or added, and the same random id.</p>
-<p><strong>When you open an explanation.</strong> Which ingredient or figure you tapped. Nothing about the food or your pet goes with it.</p>
+<p><strong>When you send a photo of a pack.</strong> The photo, which food it is of, what kind of photo it is, and the time it was taken or added.</p>
+<p><strong>When you open an explanation.</strong> Which ingredient or figure you tapped. Nothing about your pet goes with it.</p>
 <p>No request carries your name, an email address, your location, a contact list or an advertising id.</p>
 <h2>The random id</h2>
-<p>The first time it is needed, the app makes a random id for your copy of the app. It is not made from your phone, your Apple or Google account, or anything else about you. It is sent only with a barcode Zevli doesn't have and with a pack photo. It lets us count how many different people have asked for a food, and keep the photos for one food together.</p>
-<p>We remove the id from our records 90 days after it arrives.</p>
-<p>On Android the id is left out of your phone's backup, so it does not follow you to a new phone. On iPhone, restoring a whole phone from a backup brings the id back with everything else.</p>
+<p>The first time the app starts, it makes a random id for your copy of the app. It is not made from your phone, your Apple or Google account, or anything else about you.</p>
+<p>It goes with every request the app makes to Zevli. We use it to:</p>
+<ul>
+<li>stop any one copy of the app overloading the service</li>
+<li>count how Zevli is used, as totals, for example how many copies scanned a food for the first time or opened the Zevli Plus screen</li>
+<li>count how many different people have asked for a missing food, and keep the photos for one food together</li>
+<li>link a Zevli Plus subscription to your copy of the app (see Subscriptions below)</li>
+</ul>
+<p>We do not use it to build a profile of you, and we do not combine it with information from other companies about you.</p>
+<p>We remove the id from our records 90 days after it arrives. After that we keep only totals.</p>
+<p>On Android the id is left out of your phone's backup, so it does not follow you to a new phone. On iPhone it is kept in the phone's secure storage for this phone only, so it survives deleting and reinstalling the app, but it does not move to a new phone.</p>
 <h2>Photos of packs</h2>
 <p>Before a photo leaves your phone, the app redraws it, shrinking it if it is large, cuts out the parts of the file where a camera records a location, a model and a date, and deletes the copy it was given. The time the photo was taken or added is sent beside it, as a separate detail.</p>
 <p>A photo is still a photograph. Whatever is in the frame behind the pack is in it.</p>
 <p>Your photo is read by an automated service, provided by OpenAI, which turns the words on the pack into text. A person at Zevli then checks it before anything in Zevli changes. We do not send the random id to OpenAI. We never publish a photo you send, and we never use one as a food's picture.</p>
 <p>We delete a photo 90 days after a person has dealt with it. We keep the text that was read from the pack.</p>
+<h2>Installs and attribution: AppsFlyer</h2>
+<p>We use AppsFlyer to count installs and see which link or ad led to them, so we know which ways of telling people about Zevli work.</p>
+<p>AppsFlyer receives your device type, its operating system, the app version, an id AppsFlyer makes for this copy of the app, and your phone's internet address, which it uses to estimate your country. It also receives a few app events: when the Zevli Plus screen is opened and from where, and when a purchase is started, cancelled or fails. It never receives your pet's details, the foods you look up or anything you type.</p>
+<p>When you start a trial or subscribe, renew or cancel, RevenueCat tells AppsFlyer that this happened, so we can see which installs became subscribers.</p>
+<p>We do not collect your phone's advertising id. On iPhone, Zevli does not ask to track you across other companies' apps and websites. Apple's own privacy-preserving install reports are used instead.</p>
+<h2>Subscriptions: RevenueCat</h2>
+<p>Zevli Plus is a subscription. Payment is taken by Apple or Google, not by us, and we never see your card details. You manage or cancel a subscription in your Apple ID or Google Play settings. More, then Manage subscription, in the app takes you there.</p>
+<p>RevenueCat manages Zevli Plus for us. It receives the random id, the id AppsFlyer makes for this copy of the app, and the purchase details Apple or Google give it: which plan, when it started, renewed or ended, the price and the country. It uses them to tell the app whether Zevli Plus is on, and to restore a subscription if you reinstall.</p>
+<p>If you redeem a code, the app opens Apple's or Google's own screen, and the code goes to them, not to us.</p>
+<h2>Crash reports: Sentry</h2>
+<p>If the app crashes or hits an error, Sentry receives technical details so we can fix it: the device model, its operating system, the app version, what the app was doing just before, the error and the random id. It does not receive your name, contact details, your pet's details, photos or anything you typed. Crash reports are kept for up to 90 days.</p>
+<h2>Feedback emails</h2>
+<p>More, then Send feedback, opens an email to us from your own email app. It adds the app version, the phone model, its operating system and the random id at the bottom, so we can look into what you report. You can remove any of it before you send. We keep feedback emails to answer them and to improve Zevli, and we delete one on request.</p>
 <h2>The barcode scanner on Android</h2>
 <p>On Android phones, the scanner is built on a component made by Google, called ML Kit. Google says the component sends it information about the device and the app, how well the component worked, and any errors, with an identifier for that installation, for diagnostics and usage analytics. Google says the pictures and barcodes themselves are handled on your phone. This goes from your phone to Google. It does not pass through Zevli and we do not receive it.</p>
 <p>On iPhone, the scanner uses Apple's own software on the phone.</p>
 <h2>Internet addresses</h2>
-<p>Like every service on the internet, ours sees the address your phone connects from. We use it for a short time, in memory, to stop any one caller overloading the service. We do not store it in our database or in our records of requests. If a request arrives while the service is restarting, our web server may note the address in an error record, which is kept for up to five weeks.</p>
+<p>Like every service on the internet, ours sees the address your phone connects from. We use it for a short time, in memory, to stop any one caller overloading the service when the random id is missing. We do not store it in our database or in our records of requests. If a request arrives while the service is restarting, our web server may note the address in an error record, which is kept for up to five weeks.</p>
 <h2>How long things are kept</h2>
 <div class="tablewrap">
 <table>
@@ -149,11 +173,11 @@ footer{padding:48px 0 60px;border-top:1px solid var(--hairline);margin-top:20px}
 </tr>
 <tr>
 <td>Our record that a request was made, and when</td>
-<td>14 days. It does not say which food or what you searched for</td>
+<td>14 days. It does not say what you searched for</td>
 </tr>
 <tr>
-<td>The random id on a scan or a photo</td>
-<td>90 days</td>
+<td>The random id, in our records</td>
+<td>90 days, then only totals are kept</td>
 </tr>
 <tr>
 <td>A photo of a pack</td>
@@ -175,6 +199,18 @@ footer{padding:48px 0 60px;border-top:1px solid var(--hairline);margin-top:20px}
 <td>The words read from a pack photo, such as the ingredient list</td>
 <td>Kept. They are about the food, not about you</td>
 </tr>
+<tr>
+<td>Crash reports at Sentry</td>
+<td>Up to 90 days</td>
+</tr>
+<tr>
+<td>Subscription records at RevenueCat</td>
+<td>While you have Zevli Plus, and as long as the law requires for financial records after it ends</td>
+</tr>
+<tr>
+<td>Feedback emails</td>
+<td>Until we no longer need them to answer or improve Zevli, or you ask us to delete them</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -183,24 +219,28 @@ footer{padding:48px 0 60px;border-top:1px solid var(--hairline);margin-top:20px}
 <ul>
 <li><strong>DigitalOcean</strong> runs our server and stores product pictures and pack photos, in Sydney. Your phone fetches product pictures from it directly and sends pack photos to it directly, so it sees your phone's internet address when that happens.</li>
 <li><strong>Supabase</strong> holds our databases, in Sydney.</li>
-<li><strong>OpenAI</strong> reads the words on pack photos. It is based in the United States, so a photo you send is processed outside Australia.</li>
-<li><strong>Google</strong> receives the diagnostic information described above from the barcode scanner on Android phones.</li>
+<li><strong>OpenAI</strong> reads the words on pack photos.</li>
+<li><strong>AppsFlyer</strong> counts installs and where they came from, as described above.</li>
+<li><strong>RevenueCat</strong> manages Zevli Plus subscriptions, as described above.</li>
+<li><strong>Sentry</strong> receives crash reports, as described above.</li>
+<li><strong>Apple and Google</strong> take payment for Zevli Plus and deliver the app. Google also receives the diagnostic information described above from the barcode scanner on Android phones.</li>
+<li><strong>Microsoft</strong> hosts our email, including feedback you send to info@zevli.co.</li>
 <li><strong>GitHub</strong> hosts this website. If you visit it, GitHub sees your internet address, as any website host does.</li>
 </ul>
+<p>OpenAI, AppsFlyer, RevenueCat and Sentry process information outside Australia, including in the United States. Apple, Google and Microsoft may also process it overseas.</p>
 <p>We do not give information to pet food brands, stores, advertisers or data brokers.</p>
-<h2>Zevli Plus</h2>
-<p>Zevli Plus is not on sale yet. When it is, payment will be taken by Apple or Google, not by us, and we will not see your card details. We will update this page before then to say exactly what is shared to manage a subscription.</p>
 <h2>Children</h2>
 <p>Zevli is not aimed at children, and we do not knowingly collect information from them.</p>
 <h2>Your choices</h2>
 <ul>
 <li>You can use Zevli without adding a pet.</li>
-<li>Deleting a pet removes that pet's details and photo from your phone. Deleting the app removes everything. If your phone backs itself up, a deleted pet stays in the last backup until the next one runs.</li>
+<li>Deleting a pet removes that pet's details and photo from your phone. Deleting the app removes everything on your phone. If your phone backs itself up, a deleted pet stays in the last backup until the next one runs.</li>
 <li>You can refuse camera or photo access. Scanning needs the camera. Photos can be taken with it or chosen from your library, and are always optional.</li>
 <li>You do not have to send a photo. The app tells you before you add a photo that it will be sent.</li>
+<li>You can cancel Zevli Plus at any time in your Apple ID or Google Play settings.</li>
 <li>The app can make your phone buzz briefly when a scan finds a conflict. That uses no information, and it follows your phone's own vibration setting.</li>
 </ul>
-<p>Because we do not know who you are, we usually cannot find the records that came from your phone. If you would like a photo or a scan removed sooner than the times above, write to <a href="mailto:info@zevli.co">info@zevli.co</a> with the barcode and roughly when you sent it, and we will do our best to find and delete it.</p>
+<p>Because we do not know who you are, we usually cannot find the records that came from your phone. If you would like something removed sooner than the times above, write to <a href="mailto:info@zevli.co">info@zevli.co</a>. If you include the random id from a feedback email, or the barcode and roughly when you sent it, we will do our best to find and delete it.</p>
 <h2>Questions and complaints</h2>
 <p>Write to <a href="mailto:info@zevli.co">info@zevli.co</a>. We will reply within 30 days. If you are not satisfied with our answer, you can contact the Office of the Australian Information Commissioner at <a href="https://www.oaic.gov.au">oaic.gov.au</a>.</p>
 <h2>Changes to this page</h2>
