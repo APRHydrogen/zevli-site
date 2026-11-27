@@ -60,7 +60,7 @@ section{padding:95px 0}.center{text-align:center;max-width:760px;margin:0 auto 4
 .step .sub{font-size:15px;margin:0}
 
 /* sample posts */
-.ideas{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ideas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.idea{display:flex;flex-direction:column;min-width:0}.idea .post{flex:1}.ph b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .idea .style{display:inline-block;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#087b43;background:#e4f7eb;border-radius:999px;padding:6px 12px;margin-bottom:12px}
 .post{background:#fff;border:1px solid #e4e8e4;border-radius:22px;overflow:hidden;box-shadow:0 14px 35px rgba(13,49,38,.08);transition:transform .2s}
 .post:hover{transform:translateY(-4px)}
@@ -82,6 +82,9 @@ section{padding:95px 0}.center{text-align:center;max-width:760px;margin:0 auto 4
 .likes{margin-left:auto;font-size:13px;font-weight:700}
 .cap{margin:6px 13px 14px;font-size:13.5px;line-height:1.45;color:#22332d}
 
+.ex{margin-left:auto;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#6d7d76;background:#f1f4f1;border-radius:999px;padding:3px 8px}
+.clip.has-video{padding:0;background:#0c3a2f}
+.snd{position:absolute;left:10px;bottom:10px;border:0;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font:inherit;font-size:12px;font-weight:800;padding:7px 11px;cursor:pointer;z-index:2}
 /* rules */
 .rulesGrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .card{border:1px solid #e1e7e3;border-radius:26px;padding:32px;background:#fff}
@@ -175,28 +178,28 @@ a:focus-visible,button:focus-visible{outline:3px solid #75d99d;outline-offset:3p
 </div></section>
 
 <section class="closes-hide"><div class="wrap">
-  <div class="center"><div class="eyebrow">Need ideas?</div><h2>Four ways to film it.</h2><p class="sub">Just samples, each with an owner and their pet. Film and write it your way, as long as your caption says the link's in your bio and ends with #ad.</p></div>
+  <div class="center"><div class="eyebrow">Need ideas?</div><h2>Four ways to film it.</h2><p class="sub">Example videos, each with an owner and their pet. Film and write it your way, as long as your caption says the link's in your bio and ends with #ad.</p></div>
   <div class="ideas">
     <div class="idea"><span class="style">Honest review</span>
-      <div class="post"><div class="ph"><span class="av">S</span><b>sarah.mitchell</b><span class="dots">•••</span></div>
-      <div class="clip"><!-- add later: <video src="videos/FILE.mp4" controls playsinline preload="metadata"></video> --><span class="sec">0:15</span><div><div class="play"></div><div class="scene">Sarah and her dog Buddy</div><span class="soon">Sample coming soon</span></div></div>
-      <div class="pact">♡ &nbsp;💬 &nbsp;↗<span class="likes">1,204 likes</span></div>
-      <p class="cap"><b>sarah.mitchell</b> Been using Zevli with Buddy for a week. Here's my honest take 👇 Link in bio 🐾 #Zevli #DogsOfInstagram #ad</p></div></div>
+      <div class="post"><div class="ph"><span class="av">G</span><b>graham.and.the.terrier</b><span class="ex">Example</span></div>
+      <div class="clip has-video"><video src="videos/graham-dog.mp4" poster="videos/graham-dog.jpg" muted loop playsinline preload="none"></video><button type="button" class="snd" aria-label="Play with sound">🔇 Tap for sound</button></div>
+      <div class="pact">♡ &nbsp;💬 &nbsp;↗</div>
+      <p class="cap"><b>graham.and.the.terrier</b> 50 years of dogs and I'd never really read the label. Scanned his food with Zevli. Here's what I found 👇 Link in bio 🐾 #Zevli #BorderTerrier #ad</p></div></div>
     <div class="idea"><span class="style">Scan their food</span>
-      <div class="post"><div class="ph"><span class="av">J</span><b>jess_nguyen</b><span class="dots">•••</span></div>
-      <div class="clip"><!-- add later: <video src="videos/FILE.mp4" controls playsinline preload="metadata"></video> --><span class="sec">0:18</span><div><div class="play"></div><div class="scene">Jess and her cat Luna</div><span class="soon">Sample coming soon</span></div></div>
-      <div class="pact">♡ &nbsp;💬 &nbsp;↗<span class="likes">863 likes</span></div>
-      <p class="cap"><b>jess_nguyen</b> Scanned Luna's food and wasn't expecting that 😳 Link in bio to check yours 🐾 #Zevli #CatsOfInstagram #ad</p></div></div>
-    <div class="idea"><span class="style">A day with my pet</span>
-      <div class="post"><div class="ph"><span class="av">T</span><b>tom.oconnor</b><span class="dots">•••</span></div>
-      <div class="clip"><!-- add later: <video src="videos/FILE.mp4" controls playsinline preload="metadata"></video> --><span class="sec">0:22</span><div><div class="play"></div><div class="scene">Tom and his dog Milo</div><span class="soon">Sample coming soon</span></div></div>
-      <div class="pact">♡ &nbsp;💬 &nbsp;↗<span class="likes">2,317 likes</span></div>
-      <p class="cap"><b>tom.oconnor</b> Milo's walks, meds and vet notes, all in one app now. Link in bio 🐾 #Zevli #DogLife #ad</p></div></div>
-    <div class="idea"><span class="style">Before and after</span>
-      <div class="post"><div class="ph"><span class="av">E</span><b>emma.and.her.cats</b><span class="dots">•••</span></div>
-      <div class="clip"><!-- add later: <video src="videos/FILE.mp4" controls playsinline preload="metadata"></video> --><span class="sec">0:16</span><div><div class="play"></div><div class="scene">Emma and her two cats</div><span class="soon">Sample coming soon</span></div></div>
-      <div class="pact">♡ &nbsp;💬 &nbsp;↗<span class="likes">590 likes</span></div>
-      <p class="cap"><b>emma.and.her.cats</b> Two cats, zero sticky notes on the fridge 👋 Link in bio 🐾 #Zevli #CatsOfInstagram #ad</p></div></div>
+      <div class="post"><div class="ph"><span class="av">R</span><b>rachel.and.buddy</b><span class="ex">Example</span></div>
+      <div class="clip has-video"><video src="videos/rachel-dog.mp4" poster="videos/rachel-dog.jpg" muted loop playsinline preload="none"></video><button type="button" class="snd" aria-label="Play with sound">🔇 Tap for sound</button></div>
+      <div class="pact">♡ &nbsp;💬 &nbsp;↗</div>
+      <p class="cap"><b>rachel.and.buddy</b> Do you actually know what's in your dog's food? I didn't. Scanned Buddy's in two seconds 😳 Link in bio 🐾 #Zevli #GoldenRetriever #ad</p></div></div>
+    <div class="idea"><span class="style">Fussy eater</span>
+      <div class="post"><div class="ph"><span class="av">M</span><b>matt.and.maddy</b><span class="ex">Example</span></div>
+      <div class="clip has-video"><video src="videos/matt-cat.mp4" poster="videos/matt-cat.jpg" muted loop playsinline preload="none"></video><button type="button" class="snd" aria-label="Play with sound">🔇 Tap for sound</button></div>
+      <div class="pact">♡ &nbsp;💬 &nbsp;↗</div>
+      <p class="cap"><b>matt.and.maddy</b> Cats are the fussiest eaters. Scanned Maddy's food and got a score made just for her 🐱 Link in bio #Zevli #Ragdoll #ad</p></div></div>
+    <div class="idea"><span class="style">Score for my pet</span>
+      <div class="post"><div class="ph"><span class="av">M</span><b>mina.and.the.sphynx</b><span class="ex">Example</span></div>
+      <div class="clip has-video"><video src="videos/mina-cat.mp4" poster="videos/mina-cat.jpg" muted loop playsinline preload="none"></video><button type="button" class="snd" aria-label="Play with sound">🔇 Tap for sound</button></div>
+      <div class="pact">♡ &nbsp;💬 &nbsp;↗</div>
+      <p class="cap"><b>mina.and.the.sphynx</b> Hairless, picky and very opinionated 😂 Checked her food in Zevli. Scanning's free, link in bio 🐾 #Zevli #SphynxCat #ad</p></div></div>
   </div>
 </div></section>
 
@@ -334,6 +337,20 @@ document.querySelectorAll('[data-copy]').forEach(function(b){var label=b.textCon
     xhr.onerror = function(){ err.textContent = 'We couldn\'t send it. Check your connection and try again.'; send.disabled = false; prog.style.display = 'none'; };
     xhr.send(fd);
   });
+})();
+</script>
+<script>
+(function(){
+  var vids=[].slice.call(document.querySelectorAll('.clip video'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}});},{threshold:.6});
+    vids.forEach(function(v){io.observe(v);});
+  }
+  document.querySelectorAll('.snd').forEach(function(b){b.addEventListener('click',function(){
+    var v=b.parentNode.querySelector('video');
+    vids.forEach(function(o){if(o!==v){o.muted=true;var ob=o.parentNode.querySelector('.snd');if(ob)ob.textContent='🔇 Tap for sound';}});
+    v.muted=!v.muted; if(!v.muted){v.currentTime=0;} v.play(); b.textContent=v.muted?'🔇 Tap for sound':'🔊 Sound on';
+  });});
 })();
 </script>
 </body>
