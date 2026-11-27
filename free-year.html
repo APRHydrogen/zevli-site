@@ -85,6 +85,10 @@ section{padding:95px 0}.center{text-align:center;max-width:760px;margin:0 auto 4
 .ex{margin-left:auto;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#6d7d76;background:#f1f4f1;border-radius:999px;padding:3px 8px}
 .clip.has-video{padding:0;background:#0c3a2f}
 .snd{position:absolute;left:10px;bottom:10px;border:0;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font:inherit;font-size:12px;font-weight:800;padding:7px 11px;cursor:pointer;z-index:2}
+.vplay{position:absolute;inset:0;width:100%;height:100%;border:0;background:rgba(0,0,0,.12);cursor:pointer;z-index:2;display:grid;place-items:center;padding:0}
+.vplay:before{content:"";width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.9);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.vplay:after{content:"";position:absolute;border-left:20px solid #062b22;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:6px}
+.clip.playing .vplay{background:transparent}.clip.playing .vplay:before,.clip.playing .vplay:after{display:none}
 /* rules */
 .rulesGrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .card{border:1px solid #e1e7e3;border-radius:26px;padding:32px;background:#fff}
@@ -182,22 +186,22 @@ a:focus-visible,button:focus-visible{outline:3px solid #75d99d;outline-offset:3p
   <div class="ideas">
     <div class="idea"><span class="style">Honest review</span>
       <div class="post"><div class="ph"><span class="av">G</span><b>graham.and.the.terrier</b><span class="ex">Example</span></div>
-      <div class="clip has-video"><video src="videos/graham-dog.mp4" poster="videos/graham-dog.jpg" muted loop playsinline preload="none"></video><button type="button" class="snd" aria-label="Play with sound">🔇 Tap for sound</button></div>
+      <div class="clip has-video"><video src="videos/graham-dog.mp4" poster="videos/graham-dog.jpg" playsinline preload="none"></video><button type="button" class="vplay" aria-label="Play video"></button></div>
       <div class="pact">♡ &nbsp;💬 &nbsp;↗</div>
       <p class="cap"><b>graham.and.the.terrier</b> 50 years of dogs and I'd never really read the label. Scanned his food with Zevli. Here's what I found 👇 Link in bio 🐾 #Zevli #BorderTerrier #ad</p></div></div>
     <div class="idea"><span class="style">Scan their food</span>
       <div class="post"><div class="ph"><span class="av">R</span><b>rachel.and.buddy</b><span class="ex">Example</span></div>
-      <div class="clip has-video"><video src="videos/rachel-dog.mp4" poster="videos/rachel-dog.jpg" muted loop playsinline preload="none"></video><button type="button" class="snd" aria-label="Play with sound">🔇 Tap for sound</button></div>
+      <div class="clip has-video"><video src="videos/rachel-dog.mp4" poster="videos/rachel-dog.jpg" playsinline preload="none"></video><button type="button" class="vplay" aria-label="Play video"></button></div>
       <div class="pact">♡ &nbsp;💬 &nbsp;↗</div>
       <p class="cap"><b>rachel.and.buddy</b> Do you actually know what's in your dog's food? I didn't. Scanned Buddy's in two seconds 😳 Link in bio 🐾 #Zevli #GoldenRetriever #ad</p></div></div>
     <div class="idea"><span class="style">Fussy eater</span>
       <div class="post"><div class="ph"><span class="av">M</span><b>matt.and.maddy</b><span class="ex">Example</span></div>
-      <div class="clip has-video"><video src="videos/matt-cat.mp4" poster="videos/matt-cat.jpg" muted loop playsinline preload="none"></video><button type="button" class="snd" aria-label="Play with sound">🔇 Tap for sound</button></div>
+      <div class="clip has-video"><video src="videos/matt-cat.mp4" poster="videos/matt-cat.jpg" playsinline preload="none"></video><button type="button" class="vplay" aria-label="Play video"></button></div>
       <div class="pact">♡ &nbsp;💬 &nbsp;↗</div>
       <p class="cap"><b>matt.and.maddy</b> Cats are the fussiest eaters. Scanned Maddy's food and got a score made just for her 🐱 Link in bio #Zevli #Ragdoll #ad</p></div></div>
     <div class="idea"><span class="style">Score for my pet</span>
       <div class="post"><div class="ph"><span class="av">M</span><b>mina.and.the.sphynx</b><span class="ex">Example</span></div>
-      <div class="clip has-video"><video src="videos/mina-cat.mp4" poster="videos/mina-cat.jpg" muted loop playsinline preload="none"></video><button type="button" class="snd" aria-label="Play with sound">🔇 Tap for sound</button></div>
+      <div class="clip has-video"><video src="videos/mina-cat.mp4" poster="videos/mina-cat.jpg" playsinline preload="none"></video><button type="button" class="vplay" aria-label="Play video"></button></div>
       <div class="pact">♡ &nbsp;💬 &nbsp;↗</div>
       <p class="cap"><b>mina.and.the.sphynx</b> Hairless, picky and very opinionated 😂 Checked her food in Zevli. Scanning's free, link in bio 🐾 #Zevli #SphynxCat #ad</p></div></div>
   </div>
@@ -342,15 +346,15 @@ document.querySelectorAll('[data-copy]').forEach(function(b){var label=b.textCon
 <script>
 (function(){
   var vids=[].slice.call(document.querySelectorAll('.clip video'));
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}});},{threshold:.6});
-    vids.forEach(function(v){io.observe(v);});
-  }
-  document.querySelectorAll('.snd').forEach(function(b){b.addEventListener('click',function(){
+  function stop(v){v.pause();v.parentNode.classList.remove('playing');}
+  document.querySelectorAll('.vplay').forEach(function(b){b.addEventListener('click',function(){
     var v=b.parentNode.querySelector('video');
-    vids.forEach(function(o){if(o!==v){o.muted=true;var ob=o.parentNode.querySelector('.snd');if(ob)ob.textContent='🔇 Tap for sound';}});
-    v.muted=!v.muted; if(!v.muted){v.currentTime=0;} v.play(); b.textContent=v.muted?'🔇 Tap for sound':'🔊 Sound on';
+    if(!v.paused){stop(v);return;}
+    vids.forEach(function(o){if(o!==v)stop(o);});
+    v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});
+    b.parentNode.classList.add('playing');
   });});
+  vids.forEach(function(v){v.addEventListener('ended',function(){v.currentTime=0;stop(v);});});
 })();
 </script>
 </body>
